@@ -16,6 +16,11 @@ void* mv_genMvInfo(char* name, float score, int runTime, char* country)
 	movInfo_t* mvPtr;
 	
 	//allocate memory and set the member variables
+	mvPtr = (movInfo_t*)malloc(sizeof(movInfo_t));
+	
+	if(mvPtr == NULL){
+		printf("Memory allocation error\n");
+	}
 	
 	return (void*)mvPtr;
 }
