@@ -20,11 +20,11 @@ void* mv_genMvInfo(char* name, float score, int runTime, char* country)
 
 		if(mvPtr == NULL){
 		printf("Memory allocation error\n");	
-		return;
+		return 0;
 	}
 	
-	mvPtr->name = name;
-	mvPtr->madeIn = country;
+	mvPtr->name = &name;
+	mvPtr->madeIn = &country;
 	mvPtr->runTime = runTime;
 	mvPtr->score = score;
 	
