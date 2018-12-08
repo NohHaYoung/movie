@@ -9,8 +9,9 @@ int list_len(void* list); //returns the number of nodes in the list
 
 //get the node pointer
 void* list_getNextNd(void* nd); //get the next node of the input node
+void* list_getIndexNd(int index, void* list); //get the node with the specific index
 void* list_getNdObj(void* nd); //returns the object of the node
 
 //processing the list
-int list_repeatFunc(int (*func)(void* obj, void* arg), void* arg, void* list); //repeat processing func for each node objects
-
+void* list_srchNd(int (*matchFunc)(void* obj, void* cond), void* cond, void* list); //search the node which makes matchFunc ==1
+int list_repeatFunc(void (*func)(void* obj), void* list); //repeat processing func for each node objects
