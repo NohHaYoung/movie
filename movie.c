@@ -14,6 +14,7 @@ typedef struct movInfo{
 void* mv_genMvInfo(char* name, float score, int runTime, char* country)
 {
 	movInfo_t* mvPtr;
+	printf("%s (%s) %i %f", name, country, runTime, score);
 	
 	//allocate memory and set the member variables
 	mvPtr = (movInfo_t*)malloc(sizeof(movInfo_t));
@@ -28,7 +29,8 @@ void* mv_genMvInfo(char* name, float score, int runTime, char* country)
 	mvPtr->score = score;
 
 	return (void*)mvPtr;
-	
+
+	free(mvPtr);	
 }
 
 void mv_print(void* obj)
