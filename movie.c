@@ -41,6 +41,7 @@ void mv_print(void* obj)
 		printf("[ERROR] failed to print the movie Info! (object is NULL)\n");
 	}
 	
+	printf("-------------------------------------------\n");
 	printf("Name : %s (%s)\n", mvPtr->name, mvPtr->madeIn);
 	printf("running time : %i, score : %f\n", mvPtr->runTime, mvPtr->score);
 	
