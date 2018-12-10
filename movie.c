@@ -29,7 +29,6 @@ void* mv_genMvInfo(char* name, float score, int runTime, char* country)
 
 	return (void*)mvPtr;
 	
-	free(mvPtr);
 }
 
 void mv_print(void* obj)
