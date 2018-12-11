@@ -50,27 +50,7 @@ ProductVersion=
 AutoIncBuildNr=0
 SyncProduct=1
 
-[Unit1]
-FileName=..\..\프로그래밍과제2\movie_functionPointer\main.c
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
 [Unit4]
-FileName=movie.h
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit5]
 FileName=linkedList.h
 CompileCpp=0
 Folder=
@@ -80,8 +60,18 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
+[Unit5]
+FileName=..\..\..\..\..\movie\main.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
 [Unit2]
-FileName=linkedList.c
+FileName=movie.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -91,7 +81,17 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=movie.c
+FileName=movie.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit1]
+FileName=linkedList.c
 CompileCpp=0
 Folder=
 Compile=1
