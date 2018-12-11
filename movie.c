@@ -54,10 +54,7 @@ float mv_getScore(void* obj)
 {
 	movInfo_t* mvPtr = (movInfo_t*)obj;	
 	
-	printf("movie %f\n", mvPtr->score);
-	
 	return mvPtr->score;
-	/*문제점 : 값들이 모두 0으로 반환*/
 }
 
 //return the runtime value from the input instance of movInfo_t structure
