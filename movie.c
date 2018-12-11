@@ -16,13 +16,16 @@ void* mv_genMvInfo(char* name, float score, int runTime, char* country)
 	movInfo_t* mvPtr;
 	
 	//allocate memory and set the member variables
+	
+	/*allocate memory by malloc  function*/
 	mvPtr = (movInfo_t*)malloc(sizeof(movInfo_t));
 	
 	if(mvPtr == NULL){
 		printf("ERROR : No memory allocated.");
 	}
 	
-	
+	/*Set the member variables
+	If the input value is a string, use Strcpy to define member variables.*/
 	strcpy(mvPtr->madeIn, country);
 	strcpy(mvPtr->name, name);
 	mvPtr->runTime = runTime;
@@ -35,7 +38,6 @@ void* mv_genMvInfo(char* name, float score, int runTime, char* country)
 void mv_print(void* obj)
 {
 	movInfo_t* mvPtr = (movInfo_t*)obj;
-	
 	if (mvPtr == NULL)
 	{
 		printf("[ERROR] failed to print the movie Info! (object is NULL)\n");

@@ -34,10 +34,8 @@ int main(int argc, char *argv[]) {
 	list = list_genList();
 	
 	//1.3 read each movie data from the file and add it to the linked list
-	while (feof(fp)==0)
+	while (		fscanf(fp, "%s %s %i %f", name, country, &runTime, &score) == 4)
 	{	
-		fscanf(fp, "%s %s %i %f", name, country, &runTime, &score);
-		
 		//generate a movie info instance(mvInfo) with function mv_genMvInfo()
 		mvInfo = mv_genMvInfo(name, score, runTime, country);
 		
@@ -107,10 +105,15 @@ int main(int argc, char *argv[]) {
 						mv_print(mvInfo);
 						cnt++;
 					}
-					
 				}
-				printf("-----------------------------------------------------\n\n");
-				printf("Totally %i movies are listed!\n", cnt);
+				/*When there is a value that meets the criteria*/
+				if(cnt != 0){
+					printf("-----------------------------------------------------\n\n");
+					printf("Totally %i movies are listed!\n", cnt);				
+				}
+				/*If no value meets the criteria*/
+				else
+					printf("\nNo data with that information\n");
 				
 				break;
 				
@@ -134,11 +137,17 @@ int main(int argc, char *argv[]) {
 					if(mv_getRunTime(mvInfo) < runTime){
 						mv_print(mvInfo);
 						cnt++;
-					}
+					}					
 				}
-				printf("-----------------------------------------------------\n\n");
-				printf("Totally %i movies are listed!\n", cnt);
-				
+				/*When there is a value that meets the criteria*/
+				if(cnt != 0){
+					printf("-----------------------------------------------------\n\n");
+					printf("Totally %i movies are listed!\n", cnt);				
+				}
+				/*If no value meets the criteria*/
+				else
+					printf("\nNo data with that information\n");
+					
 				break;
 				
 			case 4:
@@ -158,19 +167,24 @@ int main(int argc, char *argv[]) {
 					mvInfo=list_getNdObj(ndPtr);
 					//if the input score is lower than the score of the movie,
 					//then print the contents of the mvInfo
-					printf("main ---- %f\n", mv_getScore(mvInfo));
-					/*if(score > mv_getScore(mvInfo)){
+					if(score < mv_getScore(mvInfo)){
 						mv_print(mvInfo);
 						cnt++;
-					}*/
+					}
 				}
-				printf("-----------------------------------------------------\n\n");
-				printf("Totally %i movies are listed!\n", cnt);
+				/*When there is a value that meets the criteria*/
+				if(cnt != 0){
+					printf("-----------------------------------------------------\n\n");
+					printf("Totally %i movies are listed!\n", cnt);				
+				}
+				/*If no value meets the criteria*/
+				else
+					printf("\nNo data with that information\n");
 				
 				break;
 				
 			case 5:
-				printf("Bye!\n\n");
+				printf("\nBye!\n\n");
 				exit_flag = 1;
 				break;
 				

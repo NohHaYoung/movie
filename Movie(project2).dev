@@ -61,7 +61,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=..\..\..\..\..\movie\main.c
+FileName=main.c
 CompileCpp=0
 Folder=
 Compile=1
